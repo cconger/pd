@@ -1,4 +1,7 @@
 Usage:
+Remotely:
+```go install github.com/cconger/pd```
+
 In this directory: 
 ```go install```
 ```$GOPATH/bin/pagerduty --token="<TOKEN>"```
