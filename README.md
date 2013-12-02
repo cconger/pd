@@ -4,7 +4,7 @@ Remotely:
 
 In this directory: 
 ```go install```
-```$GOPATH/bin/pagerduty --token="<TOKEN>"```
+```$GOPATH/bin/pd --token="<TOKEN>"```
 
 Pre-Code Thinking:
 
@@ -15,7 +15,10 @@ Pre-Code Thinking:
 
   If this is just a query I run a lot then I would simply do:
 
-  ```curl https://webdemo.pagerduty.com/api/v1/incidents -H 'Authorization: Token token=$TOKEN' -X GET --data-urlencode "fields=created_on,assigned_to_user,status" --data-url-encode "sort_by=created_on:desc" --data-urlencode "limit=10" | jxt incidents | less```
+  ```curl https://webdemo.pagerduty.com/api/v1/incidents -H 'Authorization: Token token=$TOKEN' -X GET \
+  --data-urlencode "fields=created_on,assigned_to_user,status" \
+  --data-url-encode "sort_by=created_on:desc" \
+  --data-urlencode "limit=10" | jxt incidents | less```
 
   jxt is a utility that I have written in python for doing simple parsing, querying and pretty printing of json.  But you could also use the json.tool in python. ```python -mjson.tool```
 
